@@ -1,4 +1,4 @@
-#N canvas 288 86 691 631 10;
+#N canvas 1061 51 691 796 10;
 #X obj 162 30 inlet id;
 #X obj 225 30 r detection;
 #X obj 152 262 route;
@@ -16,7 +16,7 @@
 #X obj 226 350 r forcer_presence;
 #X msg 285 420 1;
 #X obj 325 403 loadbang;
-#X obj 198 409 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 198 409 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 198 489 outlet;
 #X obj 226 376 t f f;
@@ -38,17 +38,17 @@
 #X connect 15 0 14 0;
 #X connect 15 1 9 0;
 #X restore 162 78 pd presence;
-#X obj 162 114 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 162 114 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 129 439 translateXYZ;
-#X obj 129 598 rectangle;
-#X obj 154 526 r zoom;
-#X obj 154 548 / 100;
+#X obj 129 658 rectangle;
+#X obj 154 486 r zoom;
+#X obj 154 508 / 100;
 #X obj 152 323 unpack 0 0 0;
-#X obj 129 483 rotateXYZ;
+#X obj 129 464 rotateXYZ;
 #X obj 129 195 pix_texture;
 #X obj 129 159 spigot;
-#X obj 96 31 inlet film;
+#X obj 129 8 inlet film;
 #X obj 287 368 r rota;
 #X obj 281 436 spigot;
 #X msg 240 438 0;
@@ -74,11 +74,16 @@
 #X connect 5 0 1 0;
 #X connect 6 0 1 1;
 #X connect 7 0 1 2;
-#X restore 159 289 pd calculs;
+#X restore 152 291 pd calculs;
 #X text 360 315 fige les pieces à leur position;
 #X obj 287 398 t b f;
-#X obj 154 573 * 3;
-#X obj 180 574 * 3;
+#X obj 154 632 * 3;
+#X obj 180 633 * 3;
+#X obj 206 501 r nb_pieces;
+#X obj 206 523 sel 0 1;
+#X msg 206 546 3;
+#X obj 206 574 t b f;
+#X msg 237 546 4.5;
 #X connect 0 0 2 1;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
@@ -109,3 +114,10 @@
 #X connect 23 1 15 1;
 #X connect 24 0 6 1;
 #X connect 25 0 6 2;
+#X connect 26 0 27 0;
+#X connect 27 0 28 0;
+#X connect 27 1 30 0;
+#X connect 28 0 29 0;
+#X connect 29 0 24 0;
+#X connect 29 1 24 1;
+#X connect 30 0 29 0;

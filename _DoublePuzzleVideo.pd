@@ -1,4 +1,4 @@
-#N canvas 464 411 1077 383 10;
+#N canvas 245 502 1077 430 10;
 #X obj 380 -24 cnv 15 320 180 empty empty empty 20 12 0 14 -204786
 -66577 0;
 #X obj 390 -1 vradio 15 1 0 3 rendu renduset rendu 0 -8 0 10 -262144
@@ -6,112 +6,10 @@
 #X text 407 -4 none;
 #X text 407 11 normal;
 #X text 407 27 thresholded;
-#X obj 249 270 cnv 15 240 30 empty empty DOUBLE_PUZZLE_VIDEO 5 14 0
+#X obj 381 159 cnv 15 240 30 empty empty DOUBLE_PUZZLE_VIDEO 5 14 0
 20 -258113 -262144 0;
-#N canvas 400 71 794 623 chrono 0;
-#X obj 6 48 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
-;
-#X obj 6 23 inlet on-off;
-#X obj 87 23 inlet reset;
-#X obj 364 352 text3d;
-#X obj 410 120 gemhead 30;
-#X obj 311 29 loadbang;
-#X obj 660 359 text3d;
-#X obj 617 130 gemhead 30;
-#X msg 677 301 text \$1;
-#X msg 386 264 text \$1:;
-#X obj 39 178 counter;
-#X floatatom 65 205 5 0 0 0 - - -;
-#X msg 39 134 down;
-#X obj 73 364 counter;
-#X floatatom 149 381 5 0 0 0 - - -;
-#X obj 90 328 t b b;
-#X obj 58 473 &&;
-#X msg 58 297 1;
-#X msg 73 420 1;
-#X obj 58 323 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 73 446 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 73 394 sel 0;
-#X obj 58 497 sel 1;
-#X msg 58 520 0;
-#X msg 88 296 0;
-#X obj 6 69 metro 1000;
-#X obj 65 226 s secondes;
-#X obj 149 400 s minutes;
-#X obj 677 255 r secondes;
-#X obj 386 242 r minutes;
-#X msg 103 419 0;
-#X obj 58 568 s chrono_off;
-#X obj 39 260 sel 0 1;
-#X obj 58 543 pipe 1000;
-#X msg 75 133 59;
-#X obj 498 238 loadbang;
-#X msg 179 276 4;
-#X obj 363 205 translateXYZ 4.7 -3.5 0;
-#X obj 655 217 translateXYZ 5.6 -3.5 0;
-#X msg 205 32 0;
-#X msg 510 274 font minecrafter_3.ttf;
-#X msg 481 274 8;
-#X connect 0 0 25 0;
-#X connect 1 0 0 0;
-#X connect 2 0 34 0;
-#X connect 2 0 36 0;
-#X connect 5 0 36 0;
-#X connect 5 0 12 0;
-#X connect 5 0 34 0;
-#X connect 5 0 39 0;
-#X connect 8 0 6 0;
-#X connect 9 0 3 0;
-#X connect 10 0 11 0;
-#X connect 10 0 32 0;
-#X connect 11 0 26 0;
-#X connect 12 0 10 0;
-#X connect 12 0 13 0;
-#X connect 13 0 14 0;
-#X connect 13 0 21 0;
-#X connect 14 0 27 0;
-#X connect 15 0 13 0;
-#X connect 15 1 34 0;
-#X connect 16 0 22 0;
-#X connect 17 0 19 0;
-#X connect 18 0 20 0;
-#X connect 19 0 16 0;
-#X connect 20 0 16 1;
-#X connect 21 0 18 0;
-#X connect 21 1 30 0;
-#X connect 22 0 23 0;
-#X connect 23 0 33 0;
-#X connect 24 0 19 0;
-#X connect 25 0 10 0;
-#X connect 28 0 8 0;
-#X connect 29 0 9 0;
-#X connect 30 0 20 0;
-#X connect 32 0 15 0;
-#X connect 32 1 17 0;
-#X connect 32 2 24 0;
-#X connect 33 0 31 0;
-#X connect 34 0 10 3;
-#X connect 35 0 41 0;
-#X connect 35 0 40 0;
-#X connect 36 0 13 3;
-#X connect 37 0 3 0;
-#X connect 38 0 6 0;
-#X connect 39 0 0 0;
-#X connect 40 0 3 0;
-#X connect 40 0 6 0;
-#X connect 41 0 3 1;
-#X connect 41 0 6 1;
-#X restore 747 153 pd chrono;
-#X obj 747 104 tgl 45 0 empty empty empty 17 7 0 10 -159808 -262144
--1 1 1;
-#X obj 798 131 bng 15 250 50 0 empty empty reset 17 7 0 10 -262144
--1 -1;
-#X obj 798 108 loadbang;
-#X obj 747 74 r chrono_off;
 #X obj 390 74 vradio 15 1 1 2 invert empty couleur_symboles 0 -8 0
-10 -262144 -1 -1 1;
+10 -262144 -1 -1 0;
 #X text 408 71 symb. blancs;
 #X text 408 87 symb. noirs;
 #X obj 22 66 s detection;
@@ -165,9 +63,9 @@
 #X connect 23 0 22 0;
 #X connect 24 0 22 0;
 #X restore 22 45 pd affichage;
-#X obj 877 3 loadbang;
-#X obj 877 45 s zoom;
-#X obj 77 161 bng 30 250 50 0 empty empty Mélanger!!! 35 15 0 10 -203904
+#X obj 794 -23 loadbang;
+#X obj 794 19 s zoom;
+#X obj 89 177 bng 30 250 50 0 empty empty Mélanger!!! 35 15 0 10 -203904
 -4034 -83269;
 #X obj 540 -8 tgl 30 0 mobil mobil Mobilite 35 15 0 10 -262144 -1 -1
 1 1;
@@ -177,19 +75,16 @@
 35 15 0 10 -262144 -1 -1 0 1;
 #X obj 540 112 tgl 30 0 playpause playpause Play/pause_video 35 15
 0 10 -262144 -1 -1 1 1;
-#X obj 771 -25 loadbang;
-#X msg 771 -4 1;
-#X obj 771 22 del 300;
-#X text 1020 79 MODE D'EMPLOI;
+#X obj 739 -23 loadbang;
+#X msg 739 -2 1;
+#X obj 739 24 del 300;
+#X text 746 287 MODE D'EMPLOI;
 #X obj 44 121 bng 30 250 50 0 empty empty Choisir_vidéo 35 15 0 10
 -261234 -258113 -1;
-#X obj 44 239 pieces;
-#X text 1020 -11 TODO;
-#X obj 238 164 bng 30 250 50 0 empty empty Mélanger!!! 35 15 0 10
+#X obj 250 177 bng 30 250 50 0 empty empty Mélanger!!! 35 15 0 10
 -203904 -4034 -83269;
 #X obj 205 115 bng 30 250 50 0 empty empty Choisir_vidéo 35 15 0 10
 -261234 -258113 -1;
-#X msg 77 203 0 1 2 3 4 5 6 7 8;
 #N canvas 371 234 448 385 logo 0;
 #X obj 34 47 gemhead;
 #X obj 55 112 loadbang;
@@ -260,17 +155,14 @@
 #X connect 20 0 17 1;
 #X connect 20 0 18 1;
 #X coords 0 -1 1 1 200 60 1 100 100;
-#X restore 747 176 pd fin_du_jeu;
-#X text 30 277 numeros des fiducials utilisés \;;
-#X text 1020 99 clic sur bang "choisir video" \; faire le jeu \; quand
+#X restore 431 193 pd fin_du_jeu;
+#X text 743 209 numeros des fiducials utilisés \;;
+#X text 745 238 clic sur bang "choisir video" \; faire le jeu \; quand
 puzzle réalisé par une équipe \, clic sur toggle corespondant \;
 ;
-#X obj 205 242 pieces;
-#X msg 877 24 36.5;
-#X obj 238 145 loadbang;
-#X obj 77 142 loadbang;
-#X text 865 131 desactivé;
-#X msg 238 206 9 10 11 13 14 15 16 17 19;
+#X msg 794 -2 36.5;
+#X obj 250 155 loadbang;
+#X obj 89 155 loadbang;
 #X obj 390 123 vradio 15 1 0 2 nb_pieces empty nb_pieces 0 -8 0 10
 -262144 -1 -1 1;
 #X text 407 136 6;
@@ -279,7 +171,7 @@ puzzle réalisé par une équipe \, clic sur toggle corespondant \;
 #X obj 172 46 video_out;
 #X obj 143 68 tgl 15 1 empty grid empty 17 7 0 10 -262144 -1 -1 1 1
 ;
-#N canvas 1004 87 811 704 double_grille 1;
+#N canvas 923 89 811 704 double_grille 0;
 #X obj 229 13 inlet;
 #X msg 318 291 draw line;
 #X obj 366 239 loadbang;
@@ -305,7 +197,6 @@ puzzle réalisé par une équipe \, clic sur toggle corespondant \;
 #X obj 256 129 unpack 0 0 0;
 #X obj 229 217 translateXYZ;
 #X obj 493 57 sel 0 1;
-#X msg 523 151 2.8;
 #X msg 591 151 3.3;
 #X obj 378 376 r grW;
 #X msg 647 151 0.001;
@@ -315,6 +206,7 @@ puzzle réalisé par une équipe \, clic sur toggle corespondant \;
 #X obj 495 25 r nb_pieces;
 #X obj 425 29 loadbang;
 #X msg 419 54 0;
+#X msg 523 151 3.3;
 #X connect 0 0 20 0;
 #X connect 0 0 21 0;
 #X connect 1 0 11 0;
@@ -347,39 +239,41 @@ puzzle réalisé par une équipe \, clic sur toggle corespondant \;
 #X connect 24 0 4 0;
 #X connect 24 0 8 0;
 #X connect 24 0 9 0;
-#X connect 24 0 30 0;
-#X connect 24 1 25 0;
-#X connect 24 1 30 0;
-#X connect 24 1 28 0;
-#X connect 25 0 5 0;
-#X connect 26 0 6 0;
-#X connect 27 0 15 1;
-#X connect 28 0 7 0;
-#X connect 29 0 15 2;
-#X connect 30 0 31 0;
-#X connect 32 0 24 0;
-#X connect 33 0 34 0;
-#X connect 34 0 24 0;
+#X connect 24 0 29 0;
+#X connect 24 1 34 0;
+#X connect 24 1 29 0;
+#X connect 24 1 27 0;
+#X connect 25 0 6 0;
+#X connect 26 0 15 1;
+#X connect 27 0 7 0;
+#X connect 28 0 15 2;
+#X connect 29 0 30 0;
+#X connect 31 0 24 0;
+#X connect 32 0 33 0;
+#X connect 33 0 24 0;
+#X connect 34 0 5 0;
 #X restore 143 87 pd double_grille;
-#X connect 7 0 6 0;
-#X connect 8 0 6 1;
-#X connect 9 0 8 0;
-#X connect 10 0 7 0;
-#X connect 15 0 14 0;
-#X connect 16 0 38 0;
-#X connect 18 0 32 0;
-#X connect 23 0 24 0;
-#X connect 24 0 19 0;
-#X connect 24 0 20 0;
-#X connect 24 0 25 0;
-#X connect 25 0 22 0;
-#X connect 27 0 28 0;
-#X connect 30 0 42 0;
-#X connect 31 0 37 0;
-#X connect 32 0 28 1;
-#X connect 38 0 17 0;
-#X connect 39 0 30 0;
-#X connect 40 0 18 0;
-#X connect 42 0 37 1;
-#X connect 46 0 15 0;
-#X connect 48 0 49 0;
+#X obj 44 239 pieces_9;
+#X obj 205 242 pieces_9;
+#X msg 89 213 10 9 8 7 6 5 4 3 2;
+#X msg 250 213 20 21 11 13 14 15 16 17 19;
+#X text 220 288 TODO \; \; terminer le mode 6-9 pieces et le tester
+\;;
+#X connect 10 0 9 0;
+#X connect 11 0 29 0;
+#X connect 13 0 41 0;
+#X connect 18 0 19 0;
+#X connect 19 0 14 0;
+#X connect 19 0 15 0;
+#X connect 19 0 20 0;
+#X connect 20 0 17 0;
+#X connect 22 0 39 0;
+#X connect 23 0 42 0;
+#X connect 24 0 40 0;
+#X connect 29 0 12 0;
+#X connect 30 0 23 0;
+#X connect 31 0 13 0;
+#X connect 35 0 10 0;
+#X connect 37 0 38 0;
+#X connect 41 0 39 1;
+#X connect 42 0 40 1;
